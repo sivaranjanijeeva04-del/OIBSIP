@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SecureSpace login and signup demo">
+    <title>SecureSpace | Login Authentication</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="auth-container">
+        <section class="welcome-panel">
+            <div class="brand">
+                <span class="brand-icon">S</span>
+                <span>SecureSpace</span>
+            </div>
+
+            <div class="welcome-content">
+                <span class="eyebrow">YOUR DIGITAL SPACE</span>
+                <h1>Welcome to a simpler, safer experience.</h1>
+                <p>Create your account or sign in to access your personal dashboard.</p>
+
+                <div class="feature">
+                    <span class="feature-icon">✓</span>
+                    <span>Simple account management</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">✓</span>
+                    <span>Responsive and user-friendly design</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">✓</span>
+                    <span>Login form validation</span>
+                </div>
+            </div>
+
+            <p class="welcome-footer">Web Development Internship Project</p>
+        </section>
+
+        <section class="form-panel">
+            <!-- Login -->
+            <div id="loginView" class="auth-view">
+                <span class="eyebrow">WELCOME BACK</span>
+                <h2>Sign in</h2>
+                <p class="form-description">Enter your details to access your account.</p>
+
+                <form id="loginForm">
+                    <label for="loginEmail">Email address</label>
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <label for="loginPassword">Password</label>
+                    <div class="password-field">
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+                        <button type="button" class="toggle-password"
+                            data-target="loginPassword">Show</button>
+                    </div>
+
+                    <p id="loginMessage" class="message" role="status"
+                        aria-live="polite"></p>
+
+                    <button type="submit" class="primary-button">Sign in</button>
+                </form>
+
+                <p class="switch-text">
+                    Don't have an account?
+                    <button type="button" class="text-button" id="showSignup">
+                        Create account
+                    </button>
+                </p>
+            </div>
+
+            <!-- Signup -->
+            <div id="signupView" class="auth-view" hidden>
+                <span class="eyebrow">GET STARTED</span>
+                <h2>Create account</h2>
+                <p class="form-description">Fill in the details to get started.</p>
+
+                <form id="signupForm">
+                    <label for="signupName">Full name</label>
+                    <input
+                        type="text"
+                        id="signupName"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        minlength="2"
+                        required
+                    >
+
+                    <label for="signupEmail">Email address</label>
+                    <input
+                        type="email"
+                        id="signupEmail"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <label for="signupPassword">Password</label>
+                    <div class="password-field">
+                        <input
+                            type="password"
+                            id="signupPassword"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+                        <button type="button" class="toggle-password"
+                            data-target="signupPassword">Show</button>
+                    </div>
+
+                    <small class="hint">
+                        Minimum 8 characters, including uppercase, lowercase and a number.
+                    </small>
+
+                    <label for="confirmPassword">Confirm password</label>
+                    <div class="password-field">
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Re-enter your password"
+                            autocomplete="new-password"
+                            required
+                        >
+                        <button type="button" class="toggle-password"
+                            data-target="confirmPassword">Show</button>
+                    </div>
+
+                    <p id="signupMessage" class="message" role="status"
+                        aria-live="polite"></p>
+
+                    <button type="submit" class="primary-button">
+                        Create account
+                    </button>
+                </form>
+
+                <p class="switch-text">
+                    Already have an account?
+                    <button type="button" class="text-button" id="showLogin">
+                        Sign in
+                    </button>
+                </p>
+            </div>
+
+            <!-- Dashboard -->
+            <div id="dashboardView" class="auth-view dashboard" hidden>
+                <div class="dashboard-icon">✓</div>
+                <span class="eyebrow">LOGIN SUCCESSFUL</span>
+                <h2>Welcome, <span id="dashboardName">User</span>!</h2>
+                <p class="form-description">
+                    You have successfully signed in to your demo account.
+                </p>
+
+                <div class="account-card">
+                    <span class="account-label">SIGNED-IN EMAIL</span>
+                    <p id="dashboardEmail"></p>
+                    <span class="status"><span></span> Session active</span>
+                </div>
+
+                <button type="button" id="logoutBtn" class="primary-button">
+                    Log out
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        Designed for learning and demonstration purposes.
+    </footer>
+</body>
+</html>
